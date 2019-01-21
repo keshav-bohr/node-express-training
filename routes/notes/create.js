@@ -4,7 +4,8 @@ async function createNote(req, res, next) {
     try {
         const createdTodo = await models.todo.create({
             title: req.body.title,
-            body: req.body.body
+            body: req.body.body,
+            userId: req.body.userId
         })
         res.json({
             todo: createdTodo
